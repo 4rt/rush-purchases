@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import data from './data';
+import history from './history';
+import purchases from './purchases';
 
 export default combineReducers({
-    data
+    history,
+    purchases
 });

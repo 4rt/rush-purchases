@@ -4,13 +4,13 @@ export type RootAction = {
 }
 
 export type RootState = {
-    data: Purchases[]
+    history: Purchases[],
+    purchases: Purchases[],
 }
 
 export type Purchases = {
     id: number,
     name: string,
-    store: string,
-    price: string,
+    shop: string,
     added: string
 }

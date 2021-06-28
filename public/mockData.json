@@ -2,8 +2,31 @@
   {
     "id": 1,
     "name": "16th Element – Warp",
-    "store": "https://www.discogs.com/16th-Element-Warp/release/48443",
-    "price": "€0.84",
+    "shop": "https://www.discogs.com/16th-Element-Warp/release/48443",
     "added": "2021-06-28T12:00:59.436Z"
+  },
+  {
+    "id": 2,
+    "name": "Akodama – Slightly Forward",
+    "shop": "https://www.discogs.com/Akodama-Slightly-Forward/release/74188",
+    "added": "2021-06-28T18:30:00.436Z"
+  },
+  {
+    "id": 3,
+    "name": "Alchemy– Bruiser",
+    "shop": "https://www.discogs.com/Alchemy-Bruiser/release/4948",
+    "added": "2021-06-28T18:31:00.436Z"
+  },
+  {
+    "id": 4,
+    "name": "Antidote – Velocity",
+    "shop": "https://www.discogs.com/Antidote-Velocity/release/320226",
+    "added": "2021-06-28T18:32:00.436Z"
+  },
+  {
+    "id": 5,
+    "name": "Art Of Trance – Mongoose",
+    "shop": "https://www.discogs.com/Art-Of-Trance-Mongoose/release/326818",
+    "added": "2021-06-28T18:33:00.436Z"
   }
 ]

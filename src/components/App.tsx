@@ -7,7 +7,7 @@ import {
     Link
 } from 'react-router-dom';
 import '../css/app.css';
-import { getPurchases } from '../store/actions/data';
+import { getPurchases } from '../store/actions/history';
 import { useDispatch } from 'react-redux';
 import Home from '../views/Home';
 import History from '../views/History';
@@ -23,7 +23,7 @@ const App: React.FunctionComponent = () => {
 
     return (
         <Router>
-            <div>
+            <main>
                 <nav>
                     <ul>
                         <li>
@@ -50,7 +50,7 @@ const App: React.FunctionComponent = () => {
                     </Route>
                     <Redirect to='/'/>
                 </Switch>
-            </div>
+            </main>
         </Router>
     )
 };
