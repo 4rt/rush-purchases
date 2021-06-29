@@ -22,6 +22,7 @@ const Table: React.FunctionComponent<TableProps> = ({ purchases = [], clickHandl
                 <td>Name</td>
                 <td>Shop</td>
                 <td>Added</td>
+                { clickHandler && <td /> }
             </tr>
             </thead>
             <tbody>

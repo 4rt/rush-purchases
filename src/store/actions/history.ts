@@ -20,7 +20,3 @@ export const getPurchases = () => (dispatch: Dispatch) => {
         .then(data => dispatch(setData(data)));
 }
 
-// export const sendStatuses = (accountId: number | string, history: any) => {
-//     return bffClient.axios.post<DataResponse>(`/statuses/${accountId}`, history);
-// }
-
