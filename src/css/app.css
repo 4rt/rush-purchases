@@ -78,14 +78,31 @@ select {
 }
 
 body {
+    min-width: 650px;
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
 }
 
 main,
 nav {
     max-width: 1000px;
     margin: auto;
+}
+
+nav {
+    height: 57px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(255,255,255, 0.95);
 }
 
 nav ul {
@@ -112,12 +129,103 @@ section {
     margin: 2rem 0;
 }
 
+thead td {
+    border-bottom: 1px solid darkgray;
+}
+
+tbody tr:not(:last-child) td {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+tbody tr:not(.empty-row):hover {
+    background-color: #eaeaea;
+}
+
+table td {
+    padding: 0.5rem 0;
+}
+
 section article,
 section table,
 header {
     padding: 0 1rem;
 }
 
+header form {
+    padding: 0.5rem 0;
+}
+
+header form input:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+form input {
+    border: 1px solid darkgrey;
+}
+
+form input,
+button {
+    border-radius: 3px;
+    padding: 0.25rem 0.75rem;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+}
+
+button {
+    border: 1px solid;
+    color: white;
+    cursor: pointer;
+}
+
+button[type='submit'] {
+    border-color: darkslategrey;
+    background-color: darkslategrey;
+}
+
+button[type='button'] {
+    border-color: darkgoldenrod;
+    background-color: darkgoldenrod;
+}
+
+form input:focus,
+button:focus {
+    outline: none;
+}
+
+button,
+form input:focus {
+    outline: none;
+}
+
+form input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(169, 169, 169, 0.5);
+}
+
+button[type='submit']:focus {
+    box-shadow: 0 0 0 0.2rem rgba(47, 79, 79, 0.5);
+}
+
+button[type='button']:focus {
+    box-shadow: 0 0 0 0.2rem rgba(184, 134, 11, 0.5);
+}
+
+button:hover,
+button:active {
+    opacity: 0.9;
+}
+
 .column-direction {
     flex-direction: column;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

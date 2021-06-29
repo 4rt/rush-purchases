@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,9 +9,11 @@ import {
 import '../css/app.css';
 import { getPurchases } from '../store/actions/history';
 import { useDispatch } from 'react-redux';
-import Home from '../views/Home';
-import History from '../views/History';
-import Edit from '../views/Edit';
+import Loading from './Loading';
+
+const Home = React.lazy(() => import('../views/Home'));
+const History = React.lazy(() => import('../views/History'));
+const Edit = React.lazy(() => import('../views/Edit'));
 
 const App: React.FunctionComponent = () => {
 
@@ -39,13 +41,19 @@ const App: React.FunctionComponent = () => {
 
             <Switch>
                 <Route path='/new'>
-                    <Edit />
+                    <Suspense fallback={ <Loading /> }>
+                        <Edit />
+                    </Suspense>
                 </Route>
                 <Route path='/purchases'>
-                    <History />
+                    <Suspense fallback={ <Loading /> }>
+                        <History />
+                    </Suspense>
                 </Route>
                 <Route exact path='/'>
-                    <Home />
+                    <Suspense fallback={ <Loading /> }>
+                        <Home />
+                    </Suspense>
                 </Route>
                 <Route
                     render={() => {

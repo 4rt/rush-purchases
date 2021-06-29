@@ -16,7 +16,7 @@ const Table: React.FunctionComponent<TableProps> = ({ purchases = [], clickHandl
     }, [purchases])
 
     return (
-        <table>
+        <table cellPadding='0' cellSpacing='0'>
             <thead>
             <tr>
                 <td>Name</td>
@@ -42,7 +42,7 @@ const Table: React.FunctionComponent<TableProps> = ({ purchases = [], clickHandl
                         }
                     </tr>
                 ))
-                : <tr><td colSpan={ 3 }>List is empty</td></tr>
+                : <tr className='empty-row'><td colSpan={ 3 }>List is empty</td></tr>
             }
             </tbody>
         </table>

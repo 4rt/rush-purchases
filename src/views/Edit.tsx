@@ -10,6 +10,7 @@ const Edit: React.FunctionComponent = () => {
     const { purchases } = useSelector((state: RootState) => state);
 
     const onSubmit = (e: React.SyntheticEvent): void => {
+        // TODO: validation
         e.preventDefault();
 
         const target = e.target as typeof e.target & {
