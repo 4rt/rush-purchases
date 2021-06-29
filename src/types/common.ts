@@ -11,6 +11,7 @@ export type RootState = {
 export type Purchases = {
     id: number,
     name: string,
-    shop: string,
+    shopName: string,
+    shopLink: string,
     added: string
 }

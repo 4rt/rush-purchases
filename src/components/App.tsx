@@ -11,7 +11,7 @@ import { getPurchases } from '../store/actions/history';
 import { useDispatch } from 'react-redux';
 import Home from '../views/Home';
 import History from '../views/History';
-import New from '../views/New';
+import Edit from '../views/Edit';
 
 const App: React.FunctionComponent = () => {
 
@@ -40,7 +40,7 @@ const App: React.FunctionComponent = () => {
 
                 <Switch>
                     <Route exact path='/new'>
-                        <New />
+                        <Edit />
                     </Route>
                     <Route exact path='/purchases'>
                         <History />
