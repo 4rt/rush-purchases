@@ -4,7 +4,7 @@ import {
     Switch,
     Redirect,
     Route,
-    Link
+    NavLink
 } from 'react-router-dom';
 import '../css/app.css';
 import { getPurchases } from '../store/actions/history';
@@ -23,34 +23,38 @@ const App: React.FunctionComponent = () => {
 
     return (
         <Router>
-            <main>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/purchases'>Purchases</Link>
-                        </li>
-                        <li>
-                            <Link to='/new'>New</Link>
-                        </li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink to='/' exact activeClassName="active">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/purchases' activeClassName="active">Purchases</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/new' activeClassName="active">New</NavLink>
+                    </li>
+                </ul>
+            </nav>
 
-                <Switch>
-                    <Route exact path='/new'>
-                        <Edit />
-                    </Route>
-                    <Route exact path='/purchases'>
-                        <History />
-                    </Route>
-                    <Route path='/'>
-                        <Home />
-                    </Route>
-                    <Redirect to='/'/>
-                </Switch>
-            </main>
+            <Switch>
+                <Route path='/new'>
+                    <Edit />
+                </Route>
+                <Route path='/purchases'>
+                    <History />
+                </Route>
+                <Route exact path='/'>
+                    <Home />
+                </Route>
+                <Route
+                    render={() => {
+                        return (
+                            <Redirect to='/' />
+                        )
+                    }}
+                />
+            </Switch>
         </Router>
     )
 };

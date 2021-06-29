@@ -13,15 +13,19 @@ const History: React.FunctionComponent = () => {
     }, [list])
 
     return (
-        <div>
-            <h1>Purchases history</h1>
-                <form onSubmit={e => e.preventDefault()}>
-                    <input type='text' placeholder='Name...'/>
-                    <input type='text' placeholder='Shop...'/>
-                    <input type="text" placeholder='Added...' inputMode="numeric" pattern="[0-9]*" />
-                </form>
+        <main>
+            <section className='column-direction'>
+                <header>
+                    <h1>Purchases history</h1>
+                    <form onSubmit={e => e.preventDefault()}>
+                        <input type='text' placeholder='Name...'/>
+                        <input type='text' placeholder='Shop...'/>
+                        <input type="text" placeholder='Added...' inputMode="numeric" pattern="[0-9]*" />
+                    </form>
+                </header>
                 <Table purchases={ history } />
-        </div>
+            </section>
+        </main>
     )
 };
 

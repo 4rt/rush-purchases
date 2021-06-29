@@ -42,16 +42,20 @@ const Edit: React.FunctionComponent = () => {
     }
 
     return (
-        <div>
-            <h1>Add new purchase</h1>
-            <form onSubmit={ onSubmit }>
-                <input type='text' placeholder='Name...' name='name'/>
-                <input type='text' placeholder='Shop name...' name='shopName'/>
-                <input type='text' placeholder='Shop link...' name='shopLink'/>
-                <button type='submit'>+ Add</button>
-            </form>
-            <Table purchases={ purchases } clickHandler={ onDeleteClick } />
-        </div>
+        <main>
+            <section className='column-direction'>
+                <header>
+                    <h1>Add new purchase</h1>
+                    <form onSubmit={ onSubmit }>
+                        <input type='text' placeholder='Name...' name='name'/>
+                        <input type='text' placeholder='Shop name...' name='shopName'/>
+                        <input type='text' placeholder='Shop link...' name='shopLink'/>
+                        <button type='submit'>+ Add</button>
+                    </form>
+                </header>
+                <Table purchases={ purchases } clickHandler={ onDeleteClick } />
+            </section>
+        </main>
     )
 };
 

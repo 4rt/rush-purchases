@@ -34,7 +34,7 @@ body {
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -56,7 +56,7 @@ img {
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -75,4 +75,49 @@ select {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+body {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+main,
+nav {
+    max-width: 1000px;
+    margin: auto;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    color: darkgrey;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+a.active,
+nav a:hover {
+    color: black;
+}
+
+section {
+    display: flex;
+    margin: 2rem 0;
+}
+
+section article,
+section table,
+header {
+    padding: 0 1rem;
+}
+
+.column-direction {
+    flex-direction: column;
 }
