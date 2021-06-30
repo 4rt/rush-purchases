@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Purchases, RootState } from '../types/common';
 import Table from '../components/Table';
+import { formatDate } from '../utils';
 
 type InputType = 'name' | 'shopName' | 'added'
 
@@ -36,7 +37,7 @@ const History: React.FunctionComponent = () => {
                 .filter(purchase => {
                     return (purchase.name.toLowerCase()).includes(filters.name.toLowerCase())
                         && (purchase.shopName.toLowerCase()).includes(filters.shopName.toLowerCase())
-                        && (purchase.added).includes(filters.date)
+                        && (formatDate(purchase.added)).includes(filters.date)
                 })
         })
     }, [filters])
@@ -49,7 +50,7 @@ const History: React.FunctionComponent = () => {
                     <form onSubmit={e => e.preventDefault()}>
                         <input type='text' placeholder='Name...' name='name' onChange={ handleChange } />
                         <input type='text' placeholder='Shop name...' name='shopName' onChange={ handleChange } />
-                        <input type='text' placeholder='Added...' name='added' inputMode="numeric" pattern="[0-9]*" onChange={ handleChange } />
+                        <input type='text' placeholder='Added...' name='date' inputMode="numeric" pattern="[0-9]*" onChange={ handleChange } />
                     </form>
                 </header>
                 <Table purchases={ list } />
